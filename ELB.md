@@ -3,6 +3,7 @@ Elastic Load Balancing automatically distributes your incoming traffic across mu
 in one or more Availability Zones.
 
 Load balancer benefits
+
 A load balancer distributes workloads across multiple compute resources, such as virtual servers. Using a load balancer increases the availability and fault tolerance of your applications.
 You can add and remove compute resources from your load balancer as your needs change, without disrupting the overall flow of requests to your applications.
 You can configure health checks, which monitor the health of the compute resources, so that the load balancer sends requests only to the healthy ones. You can also offload the work of encryption and decryption to your load balancer so that your compute resources can focus on their main work.
