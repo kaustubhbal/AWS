@@ -54,10 +54,11 @@ When choosing an instance type, consider the following factors:
 AWS EC2 instances are broadly classified into several families, each optimized for different workloads:
 
  Instance Types: 
+ 
             1. General Purpose Instances
                 series T,M 
             2. Compute Optimized Instances
-                Series C 
+                Series C               
             3. Memory Optimized Instances
                 Series R,X,Z 
             4. Accelerated Computing Instances
