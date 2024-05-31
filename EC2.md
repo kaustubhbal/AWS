@@ -53,13 +53,20 @@ When choosing an instance type, consider the following factors:
 
 AWS EC2 instances are broadly classified into several families, each optimized for different workloads:
 
-1. General Purpose Instances
-2. Compute Optimized Instances
-3. Memory Optimized Instances
-4. Storage Optimized Instances
-5. Accelerated Computing Instances
-6.High performance computing (HPC) instances
-7.
+ Instance Types: 
+            1. General Purpose Instances
+                series T,M 
+            2. Compute Optimized Instances
+                Series C 
+            3. Memory Optimized Instances
+                Series R,X,Z 
+            4. Accelerated Computing Instances
+                Series P,N,G 
+            5. Storage optimized Instances
+                Series I,D 
+            6. HPC(High Performance Computing) Optimized 
+                Series H
+  
 
 1. General Purpose Instances
 General Purpose instances provide a balanced mix of compute, memory, and networking resources, making them suitable for a variety of workloads.
@@ -143,6 +150,7 @@ Reference link :https://aws.amazon.com/ec2/instance-types/
 AWS Pricing Options
 
 Amazon Web Services (AWS) offers a variety of pricing models to suit different business needs and use cases. 
+
 1. On-Demand Instances
 - On-Demand Instances let you pay for compute or database capacity by the hour or second (minimum of 60 seconds) with no long-term commitments or upfront payments.
 - This pricing model is ideal for users who want the flexibility to change instance types or configurations frequently, and for applications with unpredictable workloads.
