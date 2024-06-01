@@ -1,23 +1,22 @@
-                          ELASTIC BLOCK STORE (EBS)
+  ELASTIC BLOCK STORE (EBS)
 
 There are two types of block store devices are available for EC2. 
 
-1. Elastic Block Store (persistent, network attached virtual drive) 
+1. Instances Store Backed EC2: 
+    • Basically the virtual hard drive on the host allocated to this EC2 instance. 
+    • Limit to 10GB per device 
+    • Ephemeral storage (non-persistent storage) 
+    • The EC2 instance can’t be stopped, can only be rebooted or terminated. 
+    Terminate will delete data. 
 
-2. Instances Store Backed EC2: 
-• Basically the virtual hard drive on the host allocated to this EC2 instance. 
-• Limit to 10GB per device 
-• Ephemeral storage (non-persistent storage) 
-• The EC2 instance can’t be stopped, can only be rebooted or terminated. 
-Terminate will delete data. 
-
-- EBS volume behaves like RAW, unformatted, external block storage devices that you 
-can attached to your EC2 instance. 
-- EBS volumes are block storage devices suitable for database style data that requires 
-frequent reads and writes. 
-- EBS volumes are attached to your EC2 instances through the AWS network, like virtual 
-hard drive. 
-- Both EBS volumes and EC2 instances must be in the same AZ. 
+2. Elastic Block Store (persistent, network attached virtual drive) 
+    - EBS volume behaves like RAW, unformatted, external block storage devices that you 
+    can attached to your EC2 instance. 
+    - EBS volumes are block storage devices suitable for database style data that requires 
+    frequent reads and writes. 
+    - EBS volumes are attached to your EC2 instances through the AWS network, like virtual 
+    hard drive. 
+    - Both EBS volumes and EC2 instances must be in the same AZ. 
 
 EBS Volume Types: 
 1. SSD backed volume 
@@ -27,100 +26,99 @@ EBS Volume Types:
 
 1. General Purpose SSD (gp2 and gp3)
 
-gp2 Volumes:
-- Key Characteristics:
-  - Baseline Performance: 3 IOPS per GB, up to 16,000 IOPS.
-  - Burst Performance: Smaller volumes can burst up to 3,000 IOPS based on burst credits.
-  - Throughput: Up to 250 MB/s.
-- Use Cases: 
-  - Boot volumes for EC2 instances.
-  - Small to medium-sized databases.
-  - Development and test environments.
-  - General-purpose workloads that need a balance of price and performance.
+    gp2 Volumes:
+    - Key Characteristics:
+      - Baseline Performance: 3 IOPS per GB, up to 16,000 IOPS.
+      - Burst Performance: Smaller volumes can burst up to 3,000 IOPS based on burst credits.
+      - Throughput: Up to 250 MB/s.
+    - Use Cases: 
+      - Boot volumes for EC2 instances.
+      - Small to medium-sized databases.
+      - Development and test environments.
+      - General-purpose workloads that need a balance of price and performance.
 
 gp3 Volumes:
-- Key Characteristics:
-  - IOPS: Provision up to 16,000 IOPS.
-  - Throughput: Provision up to 1,000 MB/s.
-  - Cost: Lower cost per GB compared to gp2 and allows independent provisioning of IOPS and throughput.
-- Use Cases:
-  - General-purpose workloads that require higher performance than gp2.
-  - Large databases.
-  - Enterprise applications with higher performance requirements.
-  - Applications needing predictable performance at a lower cost.
+    - Key Characteristics:
+      - IOPS: Provision up to 16,000 IOPS.
+      - Throughput: Provision up to 1,000 MB/s.
+      - Cost: Lower cost per GB compared to gp2 and allows independent provisioning of IOPS and throughput.
+    - Use Cases:
+      - General-purpose workloads that require higher performance than gp2.
+      - Large databases.
+      - Enterprise applications with higher performance requirements.
+      - Applications needing predictable performance at a lower cost.
 
 2. Provisioned IOPS SSD (io1 and io2)
 
-io1 Volumes:
-- Key Characteristics:
-  - IOPS: Up to 64,000 IOPS for Nitro-based instances and up to 32,000 IOPS for other instances.
-  - Throughput: Up to 1,000 MB/s.
-- Use Cases:
-  - High-performance relational databases (e.g., MySQL, PostgreSQL).
-  - NoSQL databases (e.g., Cassandra, MongoDB).
-  - Large-scale transactional systems.
-  - Applications requiring sustained IOPS performance.
+    io1 Volumes:
+    - Key Characteristics:
+      - IOPS: Up to 64,000 IOPS for Nitro-based instances and up to 32,000 IOPS for other instances.
+      - Throughput: Up to 1,000 MB/s.
+    - Use Cases:
+      - High-performance relational databases (e.g., MySQL, PostgreSQL).
+      - NoSQL databases (e.g., Cassandra, MongoDB).
+      - Large-scale transactional systems.
+      - Applications requiring sustained IOPS performance.
 
 io2 Volumes:
-- Key Characteristics:
-  - IOPS: Up to 64,000 IOPS.
-  - Throughput: Up to 1,000 MB/s.
-  - Durability: 99.999% durability, making it 100 times more durable than io1.
-- Use Cases:
-  - Mission-critical databases (e.g., Oracle, SAP HANA).
-  - Enterprise applications with stringent performance and durability requirements.
-  - Applications needing highly consistent IOPS performance.
-  - Transactional systems requiring high availability.
+    - Key Characteristics:
+      - IOPS: Up to 64,000 IOPS.
+      - Throughput: Up to 1,000 MB/s.
+      - Durability: 99.999% durability, making it 100 times more durable than io1.
+    - Use Cases:
+      - Mission-critical databases (e.g., Oracle, SAP HANA).
+      - Enterprise applications with stringent performance and durability requirements.
+      - Applications needing highly consistent IOPS performance.
+      - Transactional systems requiring high availability.
 
 3. Throughput Optimized HDD (st1)
 
-Throughput Optimized HDD (st1):
-- Key Characteristics:
-  - Throughput: 40 MB/s per TB, up to 500 MB/s.
-  - Burst Throughput: Up to 250 MB/s per TB.
-  - Cost: Lower cost per GB compared to SSDs.
-- Use Cases:
-  - Big data analytics.
-  - Data warehousing.
-  - Log processing.
-  - Streaming workloads.
-  - Applications with large, sequential data access patterns.
+    Throughput Optimized HDD (st1):
+    - Key Characteristics:
+      - Throughput: 40 MB/s per TB, up to 500 MB/s.
+      - Burst Throughput: Up to 250 MB/s per TB.
+      - Cost: Lower cost per GB compared to SSDs.
+    - Use Cases:
+      - Big data analytics.
+      - Data warehousing.
+      - Log processing.
+      - Streaming workloads.
+      - Applications with large, sequential data access patterns.
 
 4. Cold HDD (sc1)
-
-Cold HDD (sc1):
-- Key Characteristics:
-  - Throughput: 12 MB/s per TB, up to 250 MB/s.
-  - Burst Throughput: Up to 80 MB/s per TB.
-  - Cost: Lowest cost per GB among EBS volumes.
-- Use Cases:
-  - Infrequently accessed data.
-  - Archival storage.
-  - Backup solutions.
-  - Data that is rarely updated but needs to be retained.
+    - Key Characteristics:
+      - Throughput: 12 MB/s per TB, up to 250 MB/s.
+      - Burst Throughput: Up to 80 MB/s per TB.
+      - Cost: Lowest cost per GB among EBS volumes.
+    - Use Cases:
+      - Infrequently accessed data.
+      - Archival storage.
+      - Backup solutions.
+      - Data that is rarely updated but needs to be retained.
 
 5. Magnetic Volumes (Standard)
 
-Magnetic Volumes (Standard):
-- Key Characteristics:
-  - IOPS: 40-200 IOPS.
-  - Throughput: Performance varies.
-  - Cost: Low-cost storage option.
-- Use Cases:
-  - Legacy systems.
-  - Low-cost storage needs where performance is not critical.
-  - Archival data.
-  - Scenarios with minimal performance requirements.
+    - Key Characteristics:
+      - IOPS: 40-200 IOPS.
+      - Throughput: Performance varies.
+      - Cost: Low-cost storage option.
+    - Use Cases:
+      - Legacy systems.
+      - Low-cost storage needs where performance is not critical.
+      - Archival data.
+      - Scenarios with minimal performance requirements.
 
  EBS Volume Management :
 
 Terminology
-
-- Partition: A logical division of a storage device, such as an EBS volume, that can be formatted with a file system and mounted.
-- Mount Point: A directory in the file system where a partition or volume is attached for access.
-- File System: A method for organizing and storing files on a partition (e.g., ext4, xfs).
-- UUID (Universally Unique Identifier): A unique identifier assigned to storage devices and partitions, used for consistent mounting.
-- `/etc/fstab`: A configuration file in Unix-like operating systems that defines how disk partitions and other file systems should be mounted.
+    - Partition: A logical division of a storage device, such as an EBS volume, that can be formatted with 
+      a file system and mounted.
+    - Mount Point: A directory in the file system where a partition or volume is attached for access.
+    - File System: A method for organizing and storing files on a partition (e.g., ext4, xfs).
+    - UUID (Universally Unique Identifier): A unique identifier assigned to storage devices and 
+      partitions, used for consistent mounting.
+    - `/etc/fstab`: A configuration file in Unix-like operating systems that defines how disk partitions 
+      and other file systems should be mounted.
 
 
 After attaching an EBS volume to an EC2 instance, you typically need to create a file system, create partitions, mount the partitions, and ensure they mount automatically on reboot. Here are detailed notes on these processes.
