@@ -28,7 +28,8 @@ EBS Volume Types:
 
 1. General Purpose SSD (gp2 and gp3)
 
-        gp2 Volumes:
+gp2 Volumes:
+   
         - Key Characteristics:
           - Baseline Performance: 3 IOPS per GB, up to 16,000 IOPS.
           - Burst Performance: Smaller volumes can burst up to 3,000 IOPS based on burst credits.
