@@ -3,20 +3,20 @@
 There are two types of block store devices are available for EC2. 
 
 1. Instances Store Backed EC2: 
-    • Basically the virtual hard drive on the host allocated to this EC2 instance. 
-    • Limit to 10GB per device 
-    • Ephemeral storage (non-persistent storage) 
-    • The EC2 instance can’t be stopped, can only be rebooted or terminated. 
-    Terminate will delete data. 
+        • Basically the virtual hard drive on the host allocated to this EC2 instance. 
+        • Limit to 10GB per device 
+        • Ephemeral storage (non-persistent storage) 
+        • The EC2 instance can’t be stopped, can only be rebooted or terminated. 
+            Terminate will delete data. 
 
 2. Elastic Block Store (persistent, network attached virtual drive) 
-    - EBS volume behaves like RAW, unformatted, external block storage devices that you 
-    can attached to your EC2 instance. 
-    - EBS volumes are block storage devices suitable for database style data that requires 
-    frequent reads and writes. 
-    - EBS volumes are attached to your EC2 instances through the AWS network, like virtual 
-    hard drive. 
-    - Both EBS volumes and EC2 instances must be in the same AZ. 
+            - EBS volume behaves like RAW, unformatted, external block storage devices that you 
+            can attached to your EC2 instance. 
+            - EBS volumes are block storage devices suitable for database style data that requires 
+            frequent reads and writes. 
+            - EBS volumes are attached to your EC2 instances through the AWS network, like virtual 
+            hard drive. 
+            - Both EBS volumes and EC2 instances must be in the same AZ. 
 
 EBS Volume Types: 
 1. SSD backed volume 
@@ -26,16 +26,16 @@ EBS Volume Types:
 
 1. General Purpose SSD (gp2 and gp3)
 
-    gp2 Volumes:
-    - Key Characteristics:
-      - Baseline Performance: 3 IOPS per GB, up to 16,000 IOPS.
-      - Burst Performance: Smaller volumes can burst up to 3,000 IOPS based on burst credits.
-      - Throughput: Up to 250 MB/s.
-    - Use Cases: 
-      - Boot volumes for EC2 instances.
-      - Small to medium-sized databases.
-      - Development and test environments.
-      - General-purpose workloads that need a balance of price and performance.
+        gp2 Volumes:
+        - Key Characteristics:
+          - Baseline Performance: 3 IOPS per GB, up to 16,000 IOPS.
+          - Burst Performance: Smaller volumes can burst up to 3,000 IOPS based on burst credits.
+          - Throughput: Up to 250 MB/s.
+        - Use Cases: 
+          - Boot volumes for EC2 instances.
+          - Small to medium-sized databases.
+          - Development and test environments.
+          - General-purpose workloads that need a balance of price and performance.
 
 gp3 Volumes:
     - Key Characteristics:
