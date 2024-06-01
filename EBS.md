@@ -1,15 +1,17 @@
-  ELASTIC BLOCK STORE (EBS)
+ ELASTIC BLOCK STORE (EBS)
 
 There are two types of block store devices are available for EC2. 
 
-1. Instances Store Backed EC2: 
-        • Basically the virtual hard drive on the host allocated to this EC2 instance. 
+1. Instances Store Backed EC2:
+   
+        • Basically the virtual hard drive on the host allocated to this EC2 instance.
         • Limit to 10GB per device 
         • Ephemeral storage (non-persistent storage) 
         • The EC2 instance can’t be stopped, can only be rebooted or terminated. 
             Terminate will delete data. 
 
-2. Elastic Block Store (persistent, network attached virtual drive) 
+3. Elastic Block Store (persistent, network attached virtual drive)
+   
             - EBS volume behaves like RAW, unformatted, external block storage devices that you 
             can attached to your EC2 instance. 
             - EBS volumes are block storage devices suitable for database style data that requires 
@@ -38,6 +40,7 @@ EBS Volume Types:
           - General-purpose workloads that need a balance of price and performance.
 
 gp3 Volumes:
+
     - Key Characteristics:
       - IOPS: Provision up to 16,000 IOPS.
       - Throughput: Provision up to 1,000 MB/s.
@@ -49,18 +52,20 @@ gp3 Volumes:
       - Applications needing predictable performance at a lower cost.
 
 2. Provisioned IOPS SSD (io1 and io2)
-
+   
     io1 Volumes:
-    - Key Characteristics:
-      - IOPS: Up to 64,000 IOPS for Nitro-based instances and up to 32,000 IOPS for other instances.
-      - Throughput: Up to 1,000 MB/s.
-    - Use Cases:
-      - High-performance relational databases (e.g., MySQL, PostgreSQL).
-      - NoSQL databases (e.g., Cassandra, MongoDB).
-      - Large-scale transactional systems.
-      - Applications requiring sustained IOPS performance.
+    
+        - Key Characteristics:
+        - IOPS: Up to 64,000 IOPS for Nitro-based instances and up to 32,000 IOPS for other instances.
+        - Throughput: Up to 1,000 MB/s.
+       - Use Cases:
+        - High-performance relational databases (e.g., MySQL, PostgreSQL).
+        - NoSQL databases (e.g., Cassandra, MongoDB).
+        - Large-scale transactional systems.
+        - Applications requiring sustained IOPS performance.
 
 io2 Volumes:
+
     - Key Characteristics:
       - IOPS: Up to 64,000 IOPS.
       - Throughput: Up to 1,000 MB/s.
@@ -74,43 +79,46 @@ io2 Volumes:
 3. Throughput Optimized HDD (st1)
 
     Throughput Optimized HDD (st1):
-    - Key Characteristics:
-      - Throughput: 40 MB/s per TB, up to 500 MB/s.
-      - Burst Throughput: Up to 250 MB/s per TB.
-      - Cost: Lower cost per GB compared to SSDs.
-    - Use Cases:
-      - Big data analytics.
-      - Data warehousing.
-      - Log processing.
-      - Streaming workloads.
-      - Applications with large, sequential data access patterns.
+   
+       - Key Characteristics:
+       - Throughput: 40 MB/s per TB, up to 500 MB/s.
+       - Burst Throughput: Up to 250 MB/s per TB.
+       - Cost: Lower cost per GB compared to SSDs.
+       - Use Cases:
+        - Big data analytics.
+        - Data warehousing.
+        - Log processing.
+        - Streaming workloads.
+        - Applications with large, sequential data access patterns.
 
-4. Cold HDD (sc1)
-    - Key Characteristics:
-      - Throughput: 12 MB/s per TB, up to 250 MB/s.
-      - Burst Throughput: Up to 80 MB/s per TB.
-      - Cost: Lowest cost per GB among EBS volumes.
-    - Use Cases:
-      - Infrequently accessed data.
-      - Archival storage.
-      - Backup solutions.
-      - Data that is rarely updated but needs to be retained.
+5. Cold HDD (sc1)
+   
+       - Key Characteristics:
+        - Throughput: 12 MB/s per TB, up to 250 MB/s.
+        - Burst Throughput: Up to 80 MB/s per TB.
+        - Cost: Lowest cost per GB among EBS volumes.
+        - Use Cases:
+        - Infrequently accessed data.
+        - Archival storage.
+        - Backup solutions.
+        - Data that is rarely updated but needs to be retained.
 
-5. Magnetic Volumes (Standard)
+7. Magnetic Volumes (Standard)
 
-    - Key Characteristics:
-      - IOPS: 40-200 IOPS.
-      - Throughput: Performance varies.
-      - Cost: Low-cost storage option.
-    - Use Cases:
-      - Legacy systems.
-      - Low-cost storage needs where performance is not critical.
-      - Archival data.
-      - Scenarios with minimal performance requirements.
+        - Key Characteristics:
+          - IOPS: 40-200 IOPS.
+          - Throughput: Performance varies.
+        - Cost: Low-cost storage option.
+        - Use Cases:
+          - Legacy systems.
+          - Low-cost storage needs where performance is not critical.
+          - Archival data.
+          - Scenarios with minimal performance requirements.
 
  EBS Volume Management :
 
 Terminology
+
     - Partition: A logical division of a storage device, such as an EBS volume, that can be formatted with 
       a file system and mounted.
     - Mount Point: A directory in the file system where a partition or volume is attached for access.
@@ -176,7 +184,8 @@ After attaching an EBS volume to an EC2 instance, you typically need to create a
                      - This command shows the mounted file systems. Verify that `/dev/xvdf1` is mounted to `/mnt/mydata`.
 
 4. Permanent Mount Configuration
-To ensure the partition mounts automatically after a reboot, update the `/etc/fstab` file.
+   
+        To ensure the partition mounts automatically after a reboot, update the `/etc/fstab` file.
 
                   1. Get the UUID of the Partition:
                    
@@ -189,39 +198,41 @@ To ensure the partition mounts automatically after a reboot, update the `/etc/fs
                     
                        UUID=your-uuid-here /mnt/mydata ext4 defaults,nofail 0 2
                       
-                     - Replace `your-uuid-here` with the actual UUID and adjust the file system type if necessary.
+                  - Replace `your-uuid-here` with the actual UUID and adjust the file system type if 
+                        necessary.
 
 
  
 EBS Snapshot of Root Volume and Non-root Volume: 
 
-➢ EBS snapshots are point-in-time images/copies of your EBS volume. 
-➢ Any data written to the volume after the snapshot process is initiated, will not be 
-included in the resulting snapshot (but will be included in future incremental update.) 
-➢ Per AWS account up to 5000 EBS volumes can be created. 
-➢ Per account up to 10,000 EBS snapshots can be created. 
-➢ EBS snapshots are stored on S3, however you cannot access them directly. You can 
-only access them through EC2 APIs. 
-➢ While EBS volumes are AZ specific, snapshots are region specific. 
-➢ Any AZ in region can use snapshot to create EBS volume. 
-➢ To migrate an EBS from one AZ to another, create a snapshot (region specific) and 
-create an EBS volume from the Snapshot in the intended AZ. 
-➢ You can create a snapshot to an EBS volume of the same or larger size than the original 
-volumes size from which the snapshot was initially created. 
-➢ You can take a snapshot of a non-root EBS volume while the volumes is in use on a 
-running EC2 instance. 
+        ➢ EBS snapshots are point-in-time images/copies of your EBS volume. 
+        ➢ Any data written to the volume after the snapshot process is initiated, will not be 
+        included in the resulting snapshot (but will be included in future incremental update.) 
+        ➢ Per AWS account up to 5000 EBS volumes can be created. 
+        ➢ Per account up to 10,000 EBS snapshots can be created. 
+        ➢ EBS snapshots are stored on S3, however you cannot access them directly. You can 
+        only access them through EC2 APIs. 
+        ➢ While EBS volumes are AZ specific, snapshots are region specific. 
+        ➢ Any AZ in region can use snapshot to create EBS volume. 
+        ➢ To migrate an EBS from one AZ to another, create a snapshot (region specific) and 
+        create an EBS volume from the Snapshot in the intended AZ. 
+        ➢ You can create a snapshot to an EBS volume of the same or larger size than the original 
+        volumes size from which the snapshot was initially created. 
+        ➢ You can take a snapshot of a non-root EBS volume while the volumes is in use on a 
+        running EC2 instance. 
 
 
 Incremental Snapshot: 
-➢ EBS snapshots are stored incrementally. 
-➢ For low cost storage on S3 and a guarantee to be able to able fully restore data from the 
-snapshot. 
-➢ What you need is a single snapshot then further snapshot will only carry the changed 
-blocks (incremental updates). 
-➢ Therefore you do not need to have multiple full/complete copies of the snapshot. 
-➢ You are charged for: 
-• Data transferred to S3 from your EBS volume you are taking snapshot. 
-• Snapshot stored in S3. 
-• First snapshot is a clone, subsequent snapshots are incremental. 
-• Deleting snapshot will only remove data exclusive to that snapshot. 
+
+        ➢ EBS snapshots are stored incrementally. 
+        ➢ For low cost storage on S3 and a guarantee to be able to able fully restore data from the 
+        snapshot. 
+        ➢ What you need is a single snapshot then further snapshot will only carry the changed 
+        blocks (incremental updates). 
+        ➢ Therefore you do not need to have multiple full/complete copies of the snapshot. 
+        ➢ You are charged for: 
+        • Data transferred to S3 from your EBS volume you are taking snapshot. 
+        • Snapshot stored in S3. 
+        • First snapshot is a clone, subsequent snapshots are incremental. 
+        • Deleting snapshot will only remove data exclusive to that snapshot. 
 
