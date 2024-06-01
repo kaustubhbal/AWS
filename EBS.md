@@ -21,12 +21,13 @@ There are two types of block store devices are available for EC2.
             - Both EBS volumes and EC2 instances must be in the same AZ. 
 
 EBS Volume Types: 
-1. SSD backed volume 
-2. HDD backed volume 
-3. Magnetic standard 
+
+     1. SSD backed volume 
+     2. HDD backed volume 
+     3. Magnetic standard 
 
 
-1. General Purpose SSD (gp2 and gp3)
+General Purpose SSD (gp2 and gp3)
 
 gp2 Volumes:
    
@@ -52,9 +53,9 @@ gp3 Volumes:
       - Enterprise applications with higher performance requirements.
       - Applications needing predictable performance at a lower cost.
 
-2. Provisioned IOPS SSD (io1 and io2)
+ Provisioned IOPS SSD (io1 and io2)
    
-    io1 Volumes:
+   io1 Volumes:
     
         - Key Characteristics:
         - IOPS: Up to 64,000 IOPS for Nitro-based instances and up to 32,000 IOPS for other instances.
@@ -77,10 +78,8 @@ io2 Volumes:
       - Applications needing highly consistent IOPS performance.
       - Transactional systems requiring high availability.
 
-3. Throughput Optimized HDD (st1)
-
-    Throughput Optimized HDD (st1):
-   
+Throughput Optimized HDD (st1)
+ 
        - Key Characteristics:
        - Throughput: 40 MB/s per TB, up to 500 MB/s.
        - Burst Throughput: Up to 250 MB/s per TB.
@@ -92,7 +91,7 @@ io2 Volumes:
         - Streaming workloads.
         - Applications with large, sequential data access patterns.
 
-5. Cold HDD (sc1)
+Cold HDD (sc1)
    
        - Key Characteristics:
         - Throughput: 12 MB/s per TB, up to 250 MB/s.
@@ -104,7 +103,7 @@ io2 Volumes:
         - Backup solutions.
         - Data that is rarely updated but needs to be retained.
 
-7. Magnetic Volumes (Standard)
+ Magnetic Volumes (Standard)
 
         - Key Characteristics:
           - IOPS: 40-200 IOPS.
