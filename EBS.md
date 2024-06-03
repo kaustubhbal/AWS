@@ -115,6 +115,11 @@ Cold HDD (sc1)
           - Archival data.
           - Scenarios with minimal performance requirements.
 
+
+ IOPS gives us a measure of how many read and write operations a storage device can handle in a single 
+  second. 
+ Throughput, often measured in megabytes per second, tells us about the actual data transfer rate.
+
  EBS Volume Management :
 
 Terminology
