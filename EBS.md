@@ -28,7 +28,7 @@ EBS Volume Types:
 
 
 General Purpose SSD (gp2 and gp3)
-
+Reference link :https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html
 gp2 Volumes:
    
         - Key Characteristics:
