@@ -81,7 +81,9 @@ Lifecycle Hooks:
 *Types of Scaling*
 
 1.Dynamic Scaling
+
 Adjusts the number of instances based on real-time changes in demand.
+
 There are three types of dynamic scaling policies:
 
           Target Tracking Scaling:
