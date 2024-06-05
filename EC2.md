@@ -83,6 +83,7 @@ AWS EC2 instances are broadly classified into several families, each optimized f
   
 
 1. General Purpose Instances
+   
        General Purpose instances provide a balanced mix of compute, memory, and networking resources, making them suitable for a variety of workloads.
        
        - Use Cases: Web servers, development environments, small to medium databases, application servers.
@@ -100,7 +101,7 @@ AWS EC2 instances are broadly classified into several families, each optimized f
        - m5.xlarge: 4 vCPUs, 16 GiB memory.
        - m5.2xlarge: 8 vCPUs, 32 GiB memory.
 
-2. Compute Optimized Instances
+3. Compute Optimized Instances
 
        Compute Optimized instances are ideal for compute-bound applications that benefit from high- 
        performance processors.
@@ -117,7 +118,7 @@ AWS EC2 instances are broadly classified into several families, each optimized f
         - c5.xlarge: 4 vCPUs, 8 GiB memory.
         - c5.2xlarge: 8 vCPUs, 16 GiB memory.
 
-3. Memory Optimized Instances
+4. Memory Optimized Instances
    
        Memory Optimized instances are designed to deliver fast performance for workloads that process 
        large datasets in memory.
@@ -138,7 +139,7 @@ AWS EC2 instances are broadly classified into several families, each optimized f
        - r5.xlarge: 4 vCPUs, 32 GiB memory.
        - r5.2xlarge: 8 vCPUs, 64 GiB memory.
 
- 4. Storage Optimized Instances
+ 5. Storage Optimized Instances
 
         Storage Optimized instances are designed for workloads that require high, sequential read and 
         write access to large datasets on local storage.
@@ -155,7 +156,7 @@ AWS EC2 instances are broadly classified into several families, each optimized f
         - i3.xlarge: 4 vCPUs, 30.5 GiB memory, 1 x 950 GB NVMe SSD.
         - i3.2xlarge: 8 vCPUs, 61 GiB memory, 1 x 1.9 TB NVMe SSD.
 
-5. Accelerated Computing Instances
+6. Accelerated Computing Instances
    
         Accelerated Computing instances use hardware accelerators or co-processors to perform functions 
          such as floating-point number calculations, graphics processing, or data pattern matching more 
