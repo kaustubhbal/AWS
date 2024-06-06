@@ -66,13 +66,11 @@ Lab Steps
 
 5. Test the File System
    - Create a test file:
-     ```bash
      echo "Hello EFS" | sudo tee /mnt/efs/hello.txt
-     ```
+    
    - Verify the file is accessible from both EC2 instances:
-     ```bash
-     cat /mnt/efs/hello.txt
-     ```
+      cat /mnt/efs/hello.txt
+     
 
  Cleanup
 
