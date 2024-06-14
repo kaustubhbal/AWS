@@ -1,5 +1,6 @@
 
-Amazon Virtual Private Cloud (VPC)
+#Amazon Virtual Private Cloud (VPC)
+
 -AWS VPC allows you to provision a logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define. It provides control over your network settings, such as IP address ranges, subnets, route tables, and gateways, to build a secure and scalable environment for your applications.
 
 # Components of AWS VPC
@@ -70,7 +71,7 @@ Types of Route Tables:
 - Uses: Troubleshoot connectivity issues, monitor traffic patterns, and analyze security threats.
 
 
-VPC Limits
+#VPC Limits
 
 | Component                     | Default Limit |
 |-------------------------------|---------------|
