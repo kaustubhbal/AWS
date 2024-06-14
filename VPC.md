@@ -3,7 +3,7 @@
 
 -AWS VPC allows you to provision a logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define. It provides control over your network settings, such as IP address ranges, subnets, route tables, and gateways, to build a secure and scalable environment for your applications.
 
-# Components of AWS VPC
+#components of vpc
 
 1.CIDR Block
 
