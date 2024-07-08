@@ -68,17 +68,17 @@ AWS EC2 instances are broadly classified into several families, each optimized f
 
  Instance Types: 
  
-            1. General Purpose Instances
+            1. General Purpose Instances = DAY TO DAY USED SUCH AS = NORMAL WEBSIT= BALANCE
                 series T,M 
-            2. Compute Optimized Instances
+            2. Compute Optimized Instances = CPU = CALCULATOR TYPE APPLICATION
                 Series C               
-            3. Memory Optimized Instances
+            3. Memory Optimized Instances  = RAM = SOCIAL MEDEA
                 Series R,X,Z 
-            4. Accelerated Computing Instances
+            4. Accelerated Computing Instances = HIGH PERFORMANCE = GRAPHICS = GAMING
                 Series P,N,G 
-            5. Storage optimized Instances
+            5. Storage optimized Instances = STORAGE = WIKIPEDIA
                 Series I,D 
-            6. HPC(High Performance Computing) Optimized 
+            6. HPC(High Performance Computing) Optimized = ALL ABOVE = HIGH PERFOMANCE = LIVE STRAMING.
                 Series H
   
 
