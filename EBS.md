@@ -66,7 +66,7 @@ gp3 Volumes:
         - Large-scale transactional systems.
         - Applications requiring sustained IOPS performance.
 
-io2 Volumes:
+io2 Volumes: more durable io2 - durabillity 99.999 %
 
     - Key Characteristics:
       - IOPS: Up to 64,000 IOPS.
